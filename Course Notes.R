@@ -239,6 +239,9 @@ qplot(log(pm25),log(eno),data=maacs, shape = mopos, color = mopos)
 qplot(log(pm25),log(eno),data=maacs, shape = mopos, color = mopos) + geom_smooth(method = "lm")
 qplot(log(pm25), log(eno), data = maacs, facets = .~mopos) + geom_smooth(method = "lm")
 
+qplot(drv, hwy, data = mpg, geom = "boxplot") #Boxplot in GGPLOT
+qplot(drv, hwy, data = mpg, geom = "boxplot", color = manufacturer)
+
 ##GGPLOT2 Components
 ## 1. Aesthetic mappings - data to color and size
 ## 2. Geoms - lines, points, shapes
@@ -364,3 +367,16 @@ g +
         geom_smooth(method = "lm") + 
         facet_grid(bmicat~pmCat) + 
         labs(title = "MAACS Cohort", x = expression("log"*PM[2.5]), y = "Nocturnal Symptoms")
+
+#Swirl Colors Lesson
+pal <- colorRamp(c("red", "blue"))
+pal(seq(0,1,len = 6)) #Returns 6 colors
+p1 <- colorRampPalette(c("red","blue"))
+p1(6) #Returns 6 colors
+p3 <- colorRampPalette(c("blue","green"), alpha = 0.5)
+
+cols <- brewer.pal(3, "BuGn")
+pal <- colorRampPalette(cols)
+image(volcano, col = pal(20))
+image(volcano, col = p1(20))
+
