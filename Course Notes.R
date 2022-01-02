@@ -385,4 +385,4 @@ image(volcano, col = p1(20))
 g <- ggplot(mpg, aes(x = displ, y = hwy, color = factor(year)))
 g + geom_point() + facet_grid(drv~cyl, margins = TRUE) #Includes an additional row and column with the total summary
 g + geom_point() + facet_grid(drv~cyl, margins = TRUE) + geom_smooth(method = "lm", se = FALSE, size = 2, color = "black")
-`
+
