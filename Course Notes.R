@@ -329,7 +329,7 @@ summary(g) #Can look at summary of ggplot2
 print(g) #Nothing to print as only the base has been setup
 p <- g + geom_point() #Adding points to the based onject and assigning to a new variable
 print(p)
-
+g +
 g <- ggplot(maacs2, aes(logpm25, NocturnalSympt))
 g + geom_point() + geom_smooth()
 g + geom_point() + geom_smooth(method = "lm")
@@ -348,7 +348,7 @@ g + geom_point(aes(color = bmicat)) + theme_bw(base_family = "Times") #Applying 
 #Axis Limits
 
 testdat <- data.frame(x = 1:100, y = rnorm(100))
-testdat[50,2] <- 100 #Outlier
+testdat[50,2] <- 100 #Outlie`r
 plot(testdat$x, testdat$y, type = "l", ylim = c(-3,3))
 
 g <- ggplot(testdat, aes(x = x, y = y))
